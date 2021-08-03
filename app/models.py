@@ -19,7 +19,7 @@ class Product(models.Model):
 
 
 class Cart(models.Model):
-    # shift+alt,inter (import User) or (alt+ineter)
+    # shift+alt,inter (import User) or (alt+inter)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='carts', related_query_name='cart')
     is_paid = models.BooleanField(verbose_name='پرداخت شده / نشده')
     # STATUS_CHOICES = [
@@ -45,7 +45,7 @@ class Cart(models.Model):
              total += (item.price * item.quantity)
         return int(total)
 
-    # if cart has discount feild
+    # if cart has discount field
     # @property
     # def get_total_price(self):
     #     total = sum(item.total_price() for item in self.items.all())
