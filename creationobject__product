@@ -1,0 +1,42 @@
+python manage.py shell
+from app.models import Product,Cart,CartItem
+1)
+product1 = Product(name='lenovo h',quantity=50,price=15000000)
+product1.save()
+*********test
+--Product.objects.all()
+<QuerySet [<Product: lenovo h>]>
+--Product.objects.all()[0].name
+'lenovo h'
+--Product.objects.all()[0].price
+2)
+product2 = Product.objects.create(name ='asus',price=12000000,quantity=50)
+*********test
+--Product.objects.all()[1].price
+3)
+product3,created = Product.objects.get_or_create(name='lenovo',price=20000000,quantity=50)
+**********test
+--created
+True
+--product3
+<Product: lenovo>
+************************
+** all()
+--Product.objects.all()
+** get()
+--Product.objects.get(name='lenovo')
+*********************
+from django.shortcuts import get_object_or_404
+--product4=get_object_or_404(Product,name='lenovo h',quantity=50,price=15000000)
+<Product: lenovo>
+--get_object_or_404(Product,name='lenovo',quantity=100)
+error 404
+django.http.response.Http404: No Product matches the given query.
+
+
+
+
+
+
+
+

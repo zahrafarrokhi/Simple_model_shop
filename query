@@ -1,0 +1,18 @@
+
+*show all products in user's cart
+Product.objects.filter(cart__cart__user=user)
+**more example
+Product.objects.filter(cart__cart__user__phone=user)
+Product.objects.filter(cart__cart__user__email=user)
+<QuerySet [<Product: asus g>, <Product: lenovo h>, <Product: asus>]>
+
+
+---first cart in query
+CartItem has fk for Product with related_query_name='cart'
+
+---second cart in query
+feild CartItem Table (now in cart table and access to user feild)
+
+
+
+
