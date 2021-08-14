@@ -15,5 +15,5 @@ class CartAdmin(admin.ModelAdmin):
 	list_filter = ('is_paid',)
 	inlines = (CartItemInline,)
 
-admin.site.register(Cart,OrderAdmin)
+admin.site.register(Cart,CartAdmin)
 
